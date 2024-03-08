@@ -6,7 +6,7 @@ export function PaginaSenhas() {
         <SafeAreaView style={{ flex: 1 }}>
             <View style={ESTILO.header}>
                 <Text style={ESTILO.title}>
-                    Minhas senhas
+                    Minhas tarefas
                 </Text>
             </View>
         </SafeAreaView>
