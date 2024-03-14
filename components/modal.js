@@ -1,34 +1,34 @@
 import { View, StyleSheet, Pressable, Text, TouchableOpacity} from "react-native";
 
-export function ModalTokens({handleClose}) {
+export function ModalTokens({ handleClose, tarefa }) {
     return (
-        <View style={ESTILO.container}>
-            <View style={ESTILO.content}>
-                <Text style={ESTILO.title}>
-                    Tarefa Gerada
-                </Text>
-                <Pressable style={ESTILO.innerToken} >
-                    <Text style={ESTILO.text}>
-                        Tarefa
-                    </Text>
-                </Pressable>
-                <View style={ESTILO.buttonArea}>
-                    <TouchableOpacity style={ESTILO.button} onPress={handleClose}>
-                    <Text style={ESTILO.buttonText}>
-                            Voltar
-                        </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={[ESTILO.button, ESTILO.buttonSave]} >
-                        <Text style={ESTILO.buttonSaveText}>
-                            Salvar tarefa
-                        </Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-
+      <View style={ESTILO.container}>
+        <View style={ESTILO.content}>
+          <Text style={ESTILO.title}>
+            Tarefa Gerada
+          </Text>
+          <Pressable style={ESTILO.innerToken} >
+            <Text style={ESTILO.text}>
+              {tarefa}
+            </Text>
+          </Pressable>
+          <View style={ESTILO.buttonArea}>
+            <TouchableOpacity style={ESTILO.button} onPress={handleClose}>
+              <Text style={ESTILO.buttonText}>
+                Voltar
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={[ESTILO.button, ESTILO.buttonSave]} >
+              <Text style={ESTILO.buttonSaveText}>
+                Salvar tarefa
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
+      </View>
     )
-}
+  }
+  
 
 const ESTILO = StyleSheet.create({
     container: {

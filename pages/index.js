@@ -5,8 +5,10 @@ import { ModalTokens } from '../components/modal';
 export function Home() {
   const [qtde, setQtde] = useState("6");
   const [telaModal, setTelaModal] = useState(false);
+  const [tarefaGerada, setTarefaGerada] = useState("");
 
   function gerarToken() {
+    setTarefaGerada(qtde);
     setTelaModal(true);
   }
 
@@ -22,16 +24,16 @@ export function Home() {
           style={ESTILO.input}
           onChangeText={setQtde}
           value={qtde}
-          placeholder="Número de caracteres"
+          placeholder="Nome da tarefa"
         />
       </View>
       <TouchableOpacity style={ESTILO.button} onPress={gerarToken}>
         <Text style={ESTILO.buttonText}>
-          Gerar Tarefa
+          Gerar tarefa
         </Text>
       </TouchableOpacity>
       <Modal visible={telaModal} animationType="fade" transparent={true}>
-        <ModalTokens handleClose={() => setTelaModal(false)} />
+        <ModalTokens handleClose={() => setTelaModal(false)} tarefa={tarefaGerada} />
       </Modal>
     </View>
   )
@@ -63,7 +65,7 @@ const ESTILO = StyleSheet.create({
     borderRadius: 8
   },
   button: {
-    backgroundColor: "#392de9",
+    backgroundColor: "#802BED",
     width: "80%",
     height: 50,
     justifyContent: 'center',
@@ -72,10 +74,10 @@ const ESTILO = StyleSheet.create({
     marginTop: 20
   },
   buttonText: {
-    color: "#FFF"
+    color: "#FFF",
   },
   caracteres: {
     fontSize: 30,
-    fontWeight: "bold"
+    fontWeight: "bold",
   }
 })
